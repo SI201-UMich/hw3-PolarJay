@@ -34,8 +34,8 @@ class CouponDispenser:
         """
         # TODO: Implement per instructions
         self.coupon_cards = coupon_cards
-        customer_roster = []
-        issued_indices = []
+        self.customer_roster = []
+        self.issued_indices = []
 
 
     def __str__(self):
@@ -68,7 +68,16 @@ class CouponDispenser:
             str: message as described above
         """
         # TODO: Implement per instructions
-        pass
+        if self.coupon_cards:
+            if name in self.customer_roster:
+                customer_index = self.customer_roster.index(name)
+                return f"That customer already has a coupon: {self.coupon_cards[self.issued_indices[customer_index]]}"
+            else:
+                r_int = random.randomint(range(self.coupon_cards))
+                name.append(self.customer_roster)
+                r_int.append(self.issued_indices)
+        else:
+            return "The box is empty."
 
     def distribute_session(self):
         """
@@ -123,10 +132,11 @@ def main():
     ]
 
     # Uncomment the lines below as you implement each function.
-    # box = CouponDispenser(coupon_cards)
+    box = CouponDispenser(coupon_cards)
     # box.distribute_session()
     # box.tally_distribution()
-    pass
+    
+    print(box)
 
 
 # -----------------------
