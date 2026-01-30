@@ -71,7 +71,7 @@ class CouponDispenser:
         if self.coupon_cards:
             if name in self.customer_roster:
                 customer_index = self.customer_roster.index(name)
-                return f"That customer already has a coupon: {self.coupon_cards[self.issued_indices[customer_index]]}"
+                return f"That name already has a coupon: {self.coupon_cards[self.issued_indices[customer_index]]}"
             else:
                 r_int = random.randrange(len(self.coupon_cards))
                 self.customer_roster.append(name)
@@ -110,8 +110,8 @@ class CouponDispenser:
                 for name in pieces:
                     stripped_name = name.strip()
                     if stripped_name:
-                        self.issue_coupon(stripped_name)
-                        # print(self.issue_coupon(stripped_name))
+                        # self.issue_coupon(stripped_name)
+                        print(self.issue_coupon(stripped_name))
             round_number += 1
 
 
