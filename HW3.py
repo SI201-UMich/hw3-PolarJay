@@ -76,6 +76,7 @@ class CouponDispenser:
                 r_int = random.randrange(len(self.coupon_cards))
                 self.customer_roster.append(name)
                 self.issued_indices.append(r_int)
+                return self.coupon_cards[r_int]
         else:
             return "The box is empty."
 
@@ -152,6 +153,7 @@ def main():
     box = CouponDispenser(coupon_cards)
     box.distribute_session()
     # box.tally_distribution()
+    test()
 
 
 # -----------------------
