@@ -152,10 +152,9 @@ def main():
 
     # Uncomment the lines below as you implement each function.
     box = CouponDispenser(coupon_cards)
-    print(box)
     box.distribute_session()
     box.tally_distribution()
-    # test()
+    test()
 
 
 # -----------------------
